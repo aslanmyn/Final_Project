@@ -7,3 +7,6 @@ Okkofilm utilizes cutting-edge algorithms to curate a selection of the most popu
 
 ## Contributing
 Okkofilm thrives on collaboration and welcomes contributions from the community. Whether it involves adding exciting new features, addressing bugs, or refining existing functionalities, every contribution plays a vital role in enhancing the Okkofilm experience for all users. 
+## Authors
+- Mustafayev Aslan
+- Shyngys Zhekebaev
