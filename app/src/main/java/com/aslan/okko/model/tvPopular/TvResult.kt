@@ -1,0 +1,17 @@
+package com.aslan.okko.model.tvPopular
+
+
+import com.google.gson.annotations.SerializedName
+
+data class TvResult(
+    @SerializedName("backdrop_path")
+    val backdropPath: String,
+    @SerializedName("first_air_date")
+    val firstAirDate: String,
+    @SerializedName("genre_ids")
+    val genreIds: List<Int>,
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("name")
+    val name: String,
+)
