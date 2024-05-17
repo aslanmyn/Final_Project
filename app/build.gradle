@@ -3,8 +3,12 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
+}
 
 
+def localProperties = new Properties()
+file(rootProject.file("local.properties")).withInputStream { stream ->
+    localProperties.load(stream)
 }
 
 android {
@@ -17,6 +21,10 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+
+
+        buildConfigField "String", "API_KEY", "\"${localProperties['API_KEY']}\""
+        buildConfigField "String", "ACCESS_TOKEN", "\"${localProperties['ACCESS_TOKEN']}\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,19 +39,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding true
+        buildConfig = true
     }
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        viewBinding true
-    }
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -83,8 +88,6 @@ dependencies {
     //CompositeDisposable
     implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
 
-//Glide
+    //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
-
-
 }
